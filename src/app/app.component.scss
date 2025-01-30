@@ -1,0 +1,102 @@
+/* 🔹 Define o layout geral da página */
+.Site {
+  display: flex;              /* Usa Flexbox para organizar menu e conteúdo */
+  height: 100vh;              /* Ocupa 100% da altura da tela */
+  margin: 0;                  /* Remove margens externas */
+  padding: 0;                 /* Remove padding externo */
+}
+
+/* 🔹 Menu lateral fixo, ocupando toda a lateral esquerda */
+.Menu-Lateral {
+  width: 220px;               /* Largura fixa */
+  height: 100vh;              /* Ocupa 100% da altura da tela */
+  background-color: white;    /* Fundo branco */
+  padding: 20px;              /* Espaçamento interno */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  display: flex;              /* Organiza os itens verticalmente */
+  flex-direction: column;     /* Mantém os itens empilhados */
+  position: fixed;            /* 🔹 Fixa o menu na tela */
+  top: 0;                     /* 🔹 Cola no topo */
+  left: 0;                    /* 🔹 Cola na esquerda */
+  overflow-y: auto;           /* 🔹 Adiciona rolagem se necessário */
+}
+
+/* 🔹 Ajusta o conteúdo principal para não sobrepor o menu */
+.Main-Content {
+  flex: 1;                    /* Ocupa todo o espaço restante */
+  margin-left: 220px;          /* 🔹 Empurra o conteúdo para não ficar sobre o menu */
+  padding: 20px;              /* Espaçamento interno */
+  background-color: #f4f4f4;  /* Fundo levemente acinzentado */
+}
+
+/* 🔹 Estiliza a logo dentro do menu */
+.Logo img {
+  width: 150px;               /* Ajusta a largura da logo */
+  height: auto;               /* Mantém a proporção */
+  margin-bottom: 20px;        /* Espaço entre a logo e os itens do menu */
+  margin-left: 25px;
+}
+
+/* 🔹 Estiliza o item de menu "Funções" */
+.Menu-Item {
+  display: flex;              /* Alinha os itens lado a lado */
+  justify-content: space-between; /* Distribui texto e seta */
+  align-items: center;        /* Alinha verticalmente */
+  padding: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;            /* 🔹 Mostra que o item é clicável */
+  border-radius: 5px;
+  transition: background 0.3s;
+  color: #1F3A8A;
+  margin-left: -20px;
+  
+}
+
+.Menu-Item:hover {
+  background-color: #f0f0f0;  /* Muda a cor ao passar o mouse */
+}
+
+/* 🔹 Define a seta como ">" e centraliza */
+.Seta::before {
+  content: ">";                  /* 🔹 Mantém sempre o ">" */
+  font-size: 16px;               /* 🔹 Ajusta o tamanho */
+  display: inline-block;         /* 🔹 Garante que funcione corretamente */
+  transition: transform 0.3s ease-in-out; /* 🔹 Faz a animação suave */
+}
+
+/* 🔹 Quando o menu estiver aberto, rotaciona a seta para cima */
+.rotated::before {
+  transform: rotate(90deg); /* 🔹 Gira 90° para cima (fica como "^") */
+}
+
+
+
+/* 🔹 Submenu com itens */
+.Submenu {
+  list-style: none;           /* Remove os bullets da lista */
+  padding: 0;
+  margin: 10px 0;
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* 🔹 Esconde os itens quando o menu está fechado */
+.hidden {
+  display: none;
+}
+
+/* 🔹 Estiliza os itens do submenu */
+.Submenu-Item {
+  padding: 8px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.Submenu-Item:hover {
+  background-color: #e0e0e0;  /* 🔹 Muda a cor ao passar o mouse */
+}
+
+
+  

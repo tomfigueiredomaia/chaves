@@ -1,12 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common'; // ✅ Importa o CommonModule
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,  // ✅ Indica que este componente é independente (não precisa de módulo)
+  imports: [CommonModule],  // ✅ Agora podemos usar [ngClass], *ngIf, *ngFor, etc.
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'chaves';
+  funcoesAbertas = false; // ✅ Estado inicial do menu fechado
+
+  toggleFuncoes() {
+    this.funcoesAbertas = !this.funcoesAbertas; // ✅ Alterna entre aberto/fechado
+  }
 }
+
+
+
